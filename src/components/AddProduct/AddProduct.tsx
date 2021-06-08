@@ -1,61 +1,76 @@
-import { FormEvent } from 'react';
-import Button from '../Button/Button';
-import Input from '../Input/Input';
-import useValue from './hooks/useValue';
-import { Form } from './styled-components';
-import notEmpty from './utils/notEmpty';
+import { FormEvent } from "react";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
+import useValue from "./hooks/useValue";
+import { Form } from "./styled-components";
+import notEmpty from "./utils/notEmpty";
 
 const AddProduct = () => {
-  const [produto, handleProduto, produtoValidacao] = useValue('', notEmpty, 'Preencha o nome do produto');
-  const [preco, handlePreco, precoValidacao] = useValue('', notEmpty, 'Insira o preço do produto');
-  const [imagem, handleImagem, imagemValidacao] = useValue('', notEmpty, 'Insira a URL do produto');
-  const [descricao, handleDescricao, descricaoValidacao] = useValue('', notEmpty, 'Insira a descrição do produto');
+  const [product, handleproduct, productValidation] = useValue(
+    "",
+    notEmpty,
+    "Fill in the name of the product"
+  );
+  const [price, handleprice, priceValidation] = useValue(
+    "",
+    notEmpty,
+    "Insert product price"
+  );
+  const [image, handleimage, imageValidation] = useValue(
+    "",
+    notEmpty,
+    "Insert product image URL"
+  );
+  const [description, handledescription, descriptionValidation] = useValue(
+    "",
+    notEmpty,
+    "Insert product description"
+  );
   const handleOnSubmit = (event: FormEvent) => {
     event.preventDefault();
     const payload = {
-      nome: produto,
-      preco,
-      imagem,
-      descricao,
+      name: product,
+      price,
+      image,
+      description,
     };
 
-    fetch('/api/adicionar', {
-      method: 'POST',
+    fetch("/api/add", {
+      method: "POST",
       body: JSON.stringify(payload),
-    })
-      .catch((error) => {
-        throw new Error(error);
-      });
+    }).catch((error) => {
+      throw new Error(error);
+    });
   };
 
   return (
     <Form onSubmit={handleOnSubmit}>
       <Input
-        label="Nome do produto"
-        value={produto}
-        onChange={handleProduto}
-        error={produtoValidacao[0] ? undefined : produtoValidacao[1]}
+        label="product Name"
+        value={product}
+        onChange={handleproduct}
+        error={productValidation[0] ? undefined : productValidation[1]}
       />
       <Input
-        label="Preço"
-        value={preco}
-        onChange={handlePreco}
-        error={precoValidacao[0] ? undefined : precoValidacao[1]}
+        label="Price"
+        value={price}
+        onChange={handleprice}
+        error={priceValidation[0] ? undefined : priceValidation[1]}
       />
       <Input
-        label="Imagem"
-        value={imagem}
-        onChange={handleImagem}
-        error={imagem[0] ? undefined : imagemValidacao[1]}
+        label="image"
+        value={image}
+        onChange={handleimage}
+        error={image[0] ? undefined : imageValidation[1]}
       />
       <Input
-        label="Descrição"
-        value={descricao}
-        onChange={handleDescricao}
-        error={descricao[0] ? undefined : descricaoValidacao[1]}
+        label="Description"
+        value={description}
+        onChange={handledescription}
+        error={description[0] ? undefined : descriptionValidation[1]}
       />
       <div className="actions">
-        <Button>Adicionar</Button>
+        <Button>Add</Button>
       </div>
     </Form>
   );

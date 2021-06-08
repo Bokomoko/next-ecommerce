@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const ProdutoContainer = styled.article`
-  border: 1px solid #D1D5DB;
+export const ProductContainer = styled.article`
+  border: 1px solid #d1d5db;
   max-width: 250px;
   border-radius: 8px;
 
@@ -24,7 +24,7 @@ export const ProdutoContainer = styled.article`
   }
 
   .description {
-    color: #6B7280;
+    color: #6b7280;
     margin-bottom: 0;
   }
 

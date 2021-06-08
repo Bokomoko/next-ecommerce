@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Form = styled.form`
   display: flex;
@@ -6,9 +6,9 @@ export const Form = styled.form`
   gap: 1em;
 `;
 
-export const Erro = styled.div`
-  background: #FECACA;
-  color: #991B1B;
+export const Error = styled.div`
+  background: #fecaca;
+  color: #991b1b;
   padding: 1em;
   border-radius: 4px;
   margin-bottom: 1em;

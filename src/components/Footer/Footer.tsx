@@ -1,9 +1,7 @@
-import { FooterWrapper } from './styled-components';
+import { FooterWrapper } from "./styled-components";
 
 const Footer = () => (
-  <FooterWrapper>
-    Exemplo de e-commerce com React
-  </FooterWrapper>
+  <FooterWrapper>a very simple e-commerce written in Next</FooterWrapper>
 );
 
 export default Footer;

@@ -1,9 +1,9 @@
-import Produtos from '../../components/Produtos/Produtos';
-import Main from '../Main/Main';
+import Products from "../../components/Products/Products";
+import Main from "../Main/Main";
 
 const Home = () => (
   <Main>
-    <Produtos />
+    <Products />
   </Main>
 );
 

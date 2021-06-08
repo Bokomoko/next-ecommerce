@@ -6,19 +6,19 @@ const handler = async (request, response: ServerResponse) => {
   if (request.method !== 'POST') { throw new Error(); }
 
   const {
-    nome, preco, imagem, descricao,
+    name, price, image, description,
   } = JSON.parse(request.body);
 
-  // Validação
+  // Validation
   const { error } = await supabase
-    .from('produtos')
+    .from('products')
     .insert([
       {
         id: uuidv4(),
-        nome,
-        preco,
-        imagem,
-        descricao,
+        name,
+        price,
+        image,
+        description,
       },
     ]);
   if (error === null) { response.statusCode = 202; } else { response.statusCode = 500; }

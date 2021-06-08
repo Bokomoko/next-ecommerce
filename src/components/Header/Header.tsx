@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { HeaderWrapper } from './styled-components';
+import Link from "next/link";
+import { HeaderWrapper } from "./styled-components";
 
 const Header = () => (
   <HeaderWrapper>
@@ -8,12 +8,12 @@ const Header = () => (
       <ul>
         <li>
           <Link href="/">
-            <a>Início</a>
+            <a>Start</a>
           </Link>
         </li>
         <li>
-          <Link href="/adicionar-produtos">
-            <a>Adicionar produtos</a>
+          <Link href="/add-products">
+            <a>Add new products</a>
           </Link>
         </li>
       </ul>

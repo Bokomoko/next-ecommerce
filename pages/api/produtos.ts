@@ -1,12 +1,12 @@
 import supabase from '../../services/supabase';
 
 const handler = async (_, response) => {
-  const { data: produtos } = await supabase
-    .from('produtos')
+  const { data: products } = await supabase
+    .from('produtcs')
     .select('*');
 
   response.json({
-    body: produtos,
+    body: products,
   });
 };
 
